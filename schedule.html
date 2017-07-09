@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+  <link rel='stylesheet' href='./js/calendar/fullcalendar.css' />
+  <script src='./js/calendar/lib/jquery.min.js'></script>
+  <script src='./js/calendar/lib/moment.min.js'></script>
+  <script src='./js/calendar/fullcalendar.js'></script>
+  
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="pull-left navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">ABC Music</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-left" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li style="max-width:250px;"><a href="#"><img src="./img/account1.jpg" class="img-circle" alt="..." style="width:10%;"> Anthony Chan</a></li>
+        <li class="active"><a href="home.html">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Acc Info</a></li>
+            <li><a href="subAccount.html">Change Sub Account</a></li>
+            <li><a href="index.html">Logout</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Setting</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div id='calendar'></div>
+    <a href="lessonChange.html" class="btn btn-primary btn-block" role="button">Edit</a>
+  </div>
+</div>
+
+
+  
+
+<hr>
+<footer class="container-fluid text-center">
+  <p>Demo Version</p>
+</footer>
+
+<script type="text/javascript">
+
+
+  $(document).ready(function() {
+    
+    $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      defaultDate: '2017-07-12',
+      editable: false,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: 'Music Festival',
+          start: '2017-07-01'
+        },
+        {
+          title: 'Concert',
+          start: '2017-07-07',
+          end: '2017-07-10'
+        },
+        {
+          title: 'Piano Lession I',
+          start: '2017-07-12T12:00:00'
+        },
+        {
+          title: 'Piano Lession II',
+          start: '2017-07-12T17:30:00'
+        },
+        {
+          title: 'Piano Lession III',
+          start: '2017-07-14T20:00:00'
+        }
+      ]
+    });
+    
+  });
+
+</script>
+</body>
+</html>
